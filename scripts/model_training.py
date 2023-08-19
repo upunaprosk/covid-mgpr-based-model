@@ -65,7 +65,7 @@ class MultiGaussianRegression:
         DEBUG = self.config['logging'] == 'debug'
         log_level = logging.DEBUG if DEBUG else logging.INFO
         self._logger = set_logger(level=log_level)
-        self.saving_dir = ROOT_DIR / "results" / self.data_config.save_dir
+        self.saving_dir = ROOT_DIR / "results" / self.data_config.save_dir[:-4]
         if not self.saving_dir.exists():
             self.saving_dir.mkdir(parents=True, exist_ok=True)
         logging.getLogger("sklearn").setLevel(logging.WARNING)
@@ -83,7 +83,9 @@ class MultiGaussianRegression:
         self.y = training_data[['Susceptible', 'Infected']].values
         return
 
-    def split_data(self, test_size=0.2, shift=5):
+    def split_data(self):
+        shift = self.shift
+        test_size = self.test_size
         if not self.X:
             self._read_data()
         k = self.X.shape[0]
