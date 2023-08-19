@@ -62,7 +62,7 @@ class MultiGaussianRegression:
         self.y_train = None
         self.y_test = None
         self.model = None
-        DEBUG = self.config['logging']
+        DEBUG = self.config['logging'] == 'debug'
         log_level = logging.DEBUG if DEBUG else logging.INFO
         self._logger = set_logger(level=log_level)
         self.saving_dir = ROOT_DIR / "results" / self.data_config.save_dir
@@ -149,7 +149,7 @@ class MultiGaussianRegression:
             "R-squared": r2,
             "Mean Absolute Percentage Error": mape
         }
-        self._logger.info(self.model.kernel_)
+        # self._logger.info(self.model.kernel_)
         self._logger.info("R-squared: %f", r2)
         self._logger.info("Mean Absolute Percentage Error: %f%%", mape)
 
