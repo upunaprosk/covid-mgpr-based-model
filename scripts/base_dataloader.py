@@ -40,6 +40,7 @@ class BaseDataLoader(ABC):
         self._logger = set_logger(level=log_level)
         logging.getLogger("matplotlib").setLevel(logging.WARNING)
         logging.getLogger("pandas").setLevel(logging.WARNING)
+        self.plots_saving_dir = ROOT_DIR / "results" / self.config.save_dir
 
     @property
     def year(self):

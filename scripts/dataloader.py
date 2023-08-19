@@ -125,7 +125,7 @@ class CountryDataLoader(BaseDataLoader):
         formatted_dates = np.arange(data.shape[0])
         fig, axs = plt.subplots(1, 2, figsize=(20, 8))
 
-        plots_dir = self.data_dir / "processed" / "plots"
+        plots_dir = self.plots_saving_dir
         plots_dir.mkdir(parents=True, exist_ok=True)
         axs[0].plot(formatted_dates, data['Susceptible'], label='Susceptible', color=colors[0], linewidth=2)
         axs[1].plot(formatted_dates, data['Infected'], label='Infected', color=colors[1], linewidth=2)
@@ -152,7 +152,7 @@ class CountryDataLoader(BaseDataLoader):
         data = self.data
         custom_palette = sns.color_palette("Set3", n_colors=len(data.columns))
         data = data.loc[:, data.nunique() > 1]
-        plots_dir = self.data_dir / "processed" / "plots"
+        plots_dir = self.plots_saving_dir
         plots_dir.mkdir(parents=True, exist_ok=True)
         ncol = 2
         if len(prefix) > 1:
