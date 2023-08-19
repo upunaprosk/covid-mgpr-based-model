@@ -1,4 +1,4 @@
-name: mgpr_covid
+name: mgprcovid
 channels:
   - conda-forge
   - defaults
