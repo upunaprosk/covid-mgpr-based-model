@@ -1,0 +1,21 @@
+data:
+  country: "United States"
+  state_name: "California"
+  start_date: '2020'
+  end_date: '2021'
+  logging: "info"
+model:
+  gtol: 1e-06
+  test_size: 0.2
+  data_shift: 5
+  logging: "info"
+kernel:
+    type: "case3"
+    length_scale: 1e4
+    length_scale2: 1e7
+    alpha: 10000000
+    matern_nu: 1.5
+    matern_length_scale: 1000
+    alpha2: 10000
+    length_scale_periodic: 1.44
+    periodicity: 2

@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+.DS_Store
+/.idea/
+/data/processed*
+/results/*
+*.pyc
+*logs.txt
+*.png
