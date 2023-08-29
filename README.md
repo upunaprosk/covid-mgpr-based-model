@@ -5,7 +5,7 @@ This research project employs multivariate Gaussian process regression to predic
 # Running
 
 ```
-https://github.com/upunaprosk/covid-mgpr-based-model.git
+git clone https://github.com/upunaprosk/covid-mgpr-based-model.git
 cd covid-mgpr-based-model
 ```
 ## Using conda
